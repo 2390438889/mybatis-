@@ -1,52 +1,57 @@
-package lujie.model;
+package javaDIYFree.model;
 
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author: hearts
+ * @date: 2019-04-18
+ * @desc:
+ */
 public class Resume implements Serializable {
     /**
-    * 编号
-    */
+     * 编号
+     */
     private String id;
 
     /**
-    * 简历编号
-    */
+     * 简历编号
+     */
     private String resumeId;
 
     /**
-    * 职位编号
-    */
+     * 职位编号
+     */
     private String jobId;
 
     /**
-    * 投递状态
-    */
+     * 投递状态
+     */
     private String sendStatus;
 
     /**
-    * 创建者
-    */
+     * 创建者
+     */
     private String createBy;
 
     /**
-    * 创建时间
-    */
+     * 创建时间
+     */
     private Date createTime;
 
     /**
-    * 更新者
-    */
+     * 更新者
+     */
     private String updateBy;
 
     /**
-    * 更新时间
-    */
+     * 更新时间
+     */
     private Date updateTime;
 
     /**
-    * 是否有效
-    */
+     * 是否有效
+     */
     private String deleteStatus;
 
     private static final long serialVersionUID = 1L;

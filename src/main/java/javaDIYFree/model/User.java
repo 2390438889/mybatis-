@@ -1,8 +1,14 @@
-package lujie.model;
+package javaDIYFree.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+/**
+ * @author: hearts
+ * @date: 2019-04-22
+ * @desc: 
+ */
+public class User implements Serializable {
     private Long id;
 
     private Date createDate;
@@ -14,6 +20,8 @@ public class User {
     private String password;
 
     private String username;
+
+    private static final long serialVersionUID = 1L;
 
     public Long getId() {
         return id;

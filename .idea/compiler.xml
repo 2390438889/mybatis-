@@ -25,7 +25,7 @@
         <module name="mybatis" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="mybatis" target="1.5" />
     </bytecodeTargetLevel>
   </component>

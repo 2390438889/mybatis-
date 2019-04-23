@@ -1,6 +1,6 @@
-package lujie.dao;
+package javaDIYFree.dao;
 
-import lujie.model.Resume;
+import javaDIYFree.model.Resume;
 
 public interface ResumeMapper {
     int insert(Resume record);

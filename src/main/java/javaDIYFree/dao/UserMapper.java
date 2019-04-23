@@ -1,17 +1,16 @@
-package lujie.dao;
+package javaDIYFree.dao;
 
-import lujie.model.User;
+import java.util.List;
+import javaDIYFree.model.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
 
-    int insertSelective(User record);
-
     User selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(User record);
+    List<User> selectAll();
 
     int updateByPrimaryKey(User record);
 }

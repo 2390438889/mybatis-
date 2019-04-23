@@ -1,4 +1,4 @@
-package lujie.generator;
+package javaDIYFree.generator;
 
 import org.junit.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
@@ -8,6 +8,7 @@ import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -24,17 +25,26 @@ public class MybatisGeneratorPluginTest {
     @Test
     public void commondPlugin(){
         try {
-            System.out.println("--------------------start generator-------------------");
+            File dir = new File("src/main/resources/mapper");
+            final File[] files = dir.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                files[i].delete();
+            }
             List<String> warnings = new ArrayList<String>();
             boolean overwrite = true;
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            //获得配置文件流
             InputStream is = classloader.getResourceAsStream("mybatis-generator.xml");
+            //创建一个配置文件解析器
             ConfigurationParser cp = new ConfigurationParser(warnings);
+            //将配置文件解析成Configuration对象
             Configuration config = cp.parseConfiguration(is);
+            //设置文件处理，是否覆盖
             DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+            //创建MybatisGenerator对象
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+            //执行生成代码程序
             myBatisGenerator.generate(null);
-            System.out.println("--------------------end generator-------------------");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {
